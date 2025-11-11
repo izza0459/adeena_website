@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Causes and Consequences - Global Perspectives Project</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 25%, #334155 50%, #64748b 75%, #94a3b8 100%);
+            min-height: 100vh;
+            color: #1f2937;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: -50%;
+            right: -20%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        body::after {
+            content: '';
+            position: fixed;
+            bottom: -30%;
+            left: -20%;
+            width: 80%;
+            height: 80%;
+            background: radial-gradient(circle, rgba(147, 197, 253, 0.08) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-size: 1rem;
+            margin-bottom: 3rem;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(-4px);
+        }
+
+        .back-link::before {
+            content: '←';
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+        }
+
+        .main-title {
+            color: white;
+            font-size: 3.5rem;
+            font-weight: 200;
+            text-align: center;
+            margin-bottom: 4rem;
+            letter-spacing: -0.03em;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            line-height: 1.1;
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1.5rem;
+            padding: 3.5rem;
+            box-shadow: 
+                0 25px 50px -12px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(255, 255, 255, 0.1);
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .content-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #06b6d4);
+            opacity: 0.8;
+        }
+
+        .content-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 
+                0 30px 60px -12px rgba(59, 130, 246, 0.25),
+                0 0 0 1px rgba(255, 255, 255, 0.2);
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 2rem;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+        }
+
+        .section-content {
+            color: #475569;
+            line-height: 1.8;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .reference-link {
+            display: inline-block;
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 0.95rem;
+            padding: 0.5rem 1rem;
+            background: rgba(59, 130, 246, 0.1);
+            border-radius: 0.5rem;
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .reference-link:hover {
+            background: rgba(59, 130, 246, 0.15);
+            transform: translateY(-1px);
+        }
+
+        .perspectives-section {
+            margin-top: 3rem;
+        }
+
+        .perspectives-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .perspective-card {
+            background: rgba(248, 250, 252, 0.9);
+            padding: 2.5rem;
+            border-radius: 1rem;
+            border: 1px solid rgba(226, 232, 240, 0.5);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .perspective-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #06b6d4, #3b82f6, #8b5cf6);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .perspective-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+        }
+
+        .perspective-card:hover::before {
+            opacity: 1;
+        }
+
+        .perspective-card h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.01em;
+        }
+
+        .perspective-card p {
+            color: #475569;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .empty-perspective {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #94a3b8;
+            font-style: italic;
+            min-height: 150px;
+            border: 2px dashed #cbd5e1;
+            background: rgba(241, 245, 249, 0.5);
+        }
+
+        .pdf-icon {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 20px 30px -5px rgba(59, 130, 246, 0.4);
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 10;
+        }
+
+        .pdf-icon:hover {
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 25px 40px -5px rgba(59, 130, 246, 0.5);
+        }
+
+        .pdf-icon::before {
+            content: '📄';
+            font-size: 1.8rem;
+        }
+
+        @media (max-width: 1024px) {
+            .perspectives-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-title {
+                font-size: 2.5rem;
+            }
+
+            .content-card {
+                padding: 2rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .perspective-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="{% url 'home' %}" class="back-link">Back to Home</a>
+        
+        <h1 class="main-title">Causes and Consequences</h1>
+        
+        <div class="content-card">
+            <h2 class="section-title">CAUSES</h2>
+            <div class="section-content">
+                The causes behind the rise of gig work are closely linked to employment security in our research. Technology, such as apps and digital platforms, has made it easier for workers to find short-term jobs, but this also means they move away from stable, long-term contracts. The shift in cultural attitudes, where people value flexibility and independence, shows why many are willing to give up the security of permanent jobs for more freedom. Economic pressures, like unemployment or the need for extra income, also push people into gig work, often as a survival strategy rather than a choice. Finally, society is starting to normalise gig work as a valid career path, which shows why more workers accept less job security in exchange for flexibility. In short, these causes explain why gig work is growing. Still, they also highlight the trade-off workers face: freedom and flexibility on one side, versus stability and security on the other. Especially after the pandemic of 2019, there has been a massive rise in gig jobs.
+            </div>
+            <a href="https://premierscience.com/wp-content/uploads/2024/11/pjbm-24-369.pdf" class="reference-link" target="_blank">View Research Paper</a>
+        </div>
+
+        <div class="content-card">
+            <h2 class="section-title">CONSEQUENCES</h2>
+            <div class="section-content">
+                The gig economy has changed traditional job patterns by moving many full-time roles into flexible gig jobs. Industries like transport and hospitality now rely heavily on platforms like Uber and Airbnb, while professional fields such as design, software, and consulting also use gig platforms. This brings more flexibility but creates problems like unstable income, lack of benefits, and weaker job security. As a result, workers face more financial risk, and policymakers debate how to create new protections for them. Economically, gig work can help people earn during downturns and gives opportunities to those excluded from regular jobs, but it also reduces permanent positions, leading to unstable and insecure employment. It boosts services and consumer spending but may weaken wages and work standards.
+            </div>
+        </div>
+
+        <div class="content-card">
+            <h2 class="section-title">Way Forward</h2>
+            <div class="section-content">
+                Governments and policymakers must adapt labour laws to protect gig workers, since current systems were designed for permanent jobs. This includes benefits, rights, and security for people in non-traditional work. The future of work depends on balancing the flexibility of gig jobs with protections that ensure stability and fairness for workers.
+            </div>
+            <a href="https://premierscience.com/wp-content/uploads/2024/11/pjbm-24-369.pdf" class="reference-link" target="_blank">View Research Paper</a>
+        </div>
+
+        <div class="perspectives-section">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 3rem;">Different Perspectives</h2>
+            
+            <div class="perspectives-grid">
+                <div class="perspective-card">
+                    <h3>Perspective of Permanent Employees</h3>
+                    <p>Permanent employees shared that they prefer permanent jobs because at the start of their careers, they did not feel experienced enough or mentally prepared to take risks. They believe working under someone helps them gain experience, stay disciplined, and complete tasks on time. They also value benefits such as paid leave and health insurance, which make them feel more secure. A fixed salary was considered essential, as it provides stability to support themselves and their families. Many also explained that their mindset had been shaped from the beginning towards proper jobs, with little awareness about freelancing or gig work.</p>
+                </div>
+                
+                <div class="perspective-card">
+                    <h3>Perspective of an Expert (Career Counsellor)</h3>
+                    <div class="empty-perspective">
+                        Content to be added
+                    </div>
+                </div>
+                
+                <div class="perspective-card">
+                    <h3>Perspective of Gig Job Workers</h3>
+                    <div class="empty-perspective">
+                        Content to be added
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="pdf-icon" title="Download PDF"></div>
+</body>
+</html>
