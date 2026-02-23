@@ -239,6 +239,60 @@
             border-radius: 2px;
         }
 
+        /* Subtle references section styling */
+        .references-section {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .references-section h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #64748b;
+            margin-bottom: 2rem;
+            text-align: center;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding-left: 0;
+        }
+
+        .references-section h3::before {
+            display: none;
+        }
+
+        .references-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .reference-item {
+            padding: 1rem;
+            border-radius: 0.75rem;
+            background: rgba(226, 232, 240, 0.3);
+            border: 1px solid rgba(203, 213, 225, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .reference-item:hover {
+            background: rgba(226, 232, 240, 0.5);
+            border-color: rgba(148, 163, 184, 0.5);
+        }
+
+        .reference-item a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            word-break: break-word;
+            transition: color 0.3s ease;
+        }
+
+        .reference-item a:hover {
+            color: #8b5cf6;
+        }
+
         .research-content p {
             color: #475569;
             line-height: 1.8;
@@ -367,6 +421,60 @@
 
                 <h3>Conclusion</h3>
                 <p>Overall, gig jobs have succeeded in creating new opportunities and meeting the demand for flexible, short-term work, but their lack of stability, consistent income, and social protection makes them less sustainable as a full-time livelihood. Permanent employment, although less flexible, remains more successful in offering long-term financial security, benefits, and career development, which explains why the majority of workers still view it as the stronger and more sustainable option.</p>
+
+                <div class="references-section">
+                    <h3>References</h3>
+                    <div class="references-list">
+                        <div class="reference-item">
+                            <a href="https://gigeconomydata.org/basics/what-gig-worker.html" target="_blank">gigeconomydata.org - What is a Gig Worker?</a>
+                        </div>
+                        <div class="reference-item">
+                            <a href="https://www.wgu.edu/blog/pros-and-cons-gig-economy1808.html" target="_blank">WGU - Pros and Cons of Gig Economy</a>
+                        </div>
+                        <div class="reference-item">
+                            <a href="https://nativeteams.com/blog/gig-economy-advantages-and-disadvantages" target="_blank">Native Teams - Gig Economy Advantages and Disadvantages</a>
+                        </div>
+                        <div class="reference-item">
+                            <a href="https://accendotechnologies.com/blog/gig-economy-pros-and-cons/" target="_blank">Accendo Technologies - Gig Economy Pros and Cons</a>
+                        </div>
+                        <div class="reference-item">
+                            <a href="https://www.indeed.com/career-advice/finding-a-job/permanent-employment" target="_blank">Indeed - Guide to Permanent Employment</a>
+                        </div>
+                        <div class="reference-item">
+                            <a href="https://www.fool.com/terms/p/permanent-employee/" target="_blank">Motley Fool - Permanent Employee Definition</a>
+                        </div>
+                        <div class="reference-item">
+                            <a href="https://www.astutepeople.co.uk/blog/2024/12/20/benefits-permanent-employment/" target="_blank">Astute People - Benefits of Permanent Employment</a>
+                        </div>
+                        <div class="reference-item">
+                            <a href="https://www.nlbservices.com/blog/pros-and-cons-of-permanent-jobs-vs-temporary-jobs/" target="_blank">NLB Services - Permanent vs Temporary Jobs</a>
+                        </div>
+                        <div class="reference-item">
+                            <a href="https://cooperlomaz.co.uk/a-complete-guide-to-contract-vs-permanent-roles-pros-and-cons-for-job-seekers/" target="_blank">Cooper Lomaz - Contract vs Permanent Roles</a>
+                        </div>
+                        <div class="reference-item">
+                            <a href="https://www.wowrecruitment.com.au/latest-news/the-pros-and-cons-of-temporary-vs-permanent-work" target="_blank">WOW Recruitment - Temporary vs Permanent Work</a>
+                        </div>
+                        <div class="reference-item">
+                            <a href="https://rsisinternational.org/journals/ijriss/articles/the-shift-from-traditional-jobs-to-gig-work-rethinking-career-development-in-a-flexible-economy/" target="_blank">RSIS International - Shift to Gig Work</a>
+                        </div>
+                        <div class="reference-item">
+                            <a href="https://www.theglobalrecruiter.com/is-the-gig-economy-a-threat-to-recruitment-agencies/" target="_blank">The Global Recruiter - Gig Economy Impact</a>
+                        </div>
+                        <div class="reference-item">
+                            <a href="https://www.fenews.co.uk/skills/workers-still-prefer-permanent-jobs-despite-rapid-rise-of-the-gig-economy/" target="_blank">FE News - Workers Prefer Permanent Jobs</a>
+                        </div>
+                        <div class="reference-item">
+                            <a href="https://pk.indeed.com/career/freelancer/salaries" target="_blank">Indeed Pakistan - Freelancer Salaries</a>
+                        </div>
+                        <div class="reference-item">
+                            <a href="https://tribune.com.pk/story/2385536/gig-economy-gains-traction" target="_blank">The Tribune - Gig Economy in Pakistan</a>
+                        </div>
+                        <div class="reference-item">
+                            <a href="https://www.demandsage.com/upwork-statistics/" target="_blank">Demand Sage - Upwork Statistics</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
